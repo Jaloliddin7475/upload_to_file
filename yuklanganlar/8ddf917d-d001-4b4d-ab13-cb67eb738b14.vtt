@@ -1,0 +1,374 @@
+﻿WEBVTT
+
+1
+00:00:01.515 --> 00:00:02.788
+<v Narrator>Hey in this video,</v>
+
+2
+00:00:02.788 --> 00:00:06.621
+we're gonna find out why should we use Spring.
+
+3
+00:00:07.979 --> 00:00:10.003
+So Spring in a nutshell,
+
+4
+00:00:10.003 --> 00:00:12.592
+basically Spring is a very popular framework
+
+5
+00:00:12.592 --> 00:00:15.781
+for building enterprise Java applications.
+
+6
+00:00:15.781 --> 00:00:17.073
+When Spring first came out,
+
+7
+00:00:17.073 --> 00:00:21.611
+it was initially a simpler, lightweight alternative to J2EE.
+
+8
+00:00:21.611 --> 00:00:24.582
+They basically give you a large number of helper classes
+
+9
+00:00:24.582 --> 00:00:27.749
+to make enterprise development easier.
+
+10
+00:00:28.960 --> 00:00:33.065
+But now you may wonder, well, what about J2EE or Java EE?
+
+11
+00:00:33.065 --> 00:00:36.045
+And here they have client-side presentation.
+
+12
+00:00:36.045 --> 00:00:38.130
+They talk about server-side presentation
+
+13
+00:00:38.130 --> 00:00:41.730
+with JSP, servlets, XML, and web services.
+
+14
+00:00:41.730 --> 00:00:44.745
+They also discuss the idea of server-side business logic
+
+15
+00:00:44.745 --> 00:00:48.459
+using Enterprise JavaBeans, web services, and so on,
+
+16
+00:00:48.459 --> 00:00:51.066
+and all talking to a backend database.
+
+17
+00:00:51.066 --> 00:00:54.349
+And this all looks really good on paper and as developers,
+
+18
+00:00:54.349 --> 00:00:58.360
+we were very excited when we saw this, viewing it on paper,
+
+19
+00:00:58.360 --> 00:00:59.942
+but what happened is that when we actually got
+
+20
+00:00:59.942 --> 00:01:03.147
+into the implementation details, it was another story,
+
+21
+00:01:03.147 --> 00:01:06.480
+and I'll talk more about that in second.
+
+22
+00:01:07.645 --> 00:01:09.837
+All right, so how did J2EE grow up?
+
+23
+00:01:09.837 --> 00:01:12.008
+Well, in the early days, it started out really nice.
+
+24
+00:01:12.008 --> 00:01:15.091
+You had servlets, JSPs, back in 1999.
+
+25
+00:01:15.091 --> 00:01:18.185
+You also had Enterprise JavaBeans, Java Message Service,
+
+26
+00:01:18.185 --> 00:01:20.244
+and RMI, Remote Method Invocation,
+
+27
+00:01:20.244 --> 00:01:21.080
+and then over the years
+
+28
+00:01:21.080 --> 00:01:24.110
+they added more support for EJB with 1.3.
+
+29
+00:01:24.110 --> 00:01:26.203
+They added J2EE 1.4.
+
+30
+00:01:26.203 --> 00:01:28.281
+They added web services
+
+31
+00:01:28.281 --> 00:01:31.232
+and Java EE 5, they renamed it a bit
+
+32
+00:01:31.232 --> 00:01:33.174
+so it's Java Enterprise Edition 5.
+
+33
+00:01:33.174 --> 00:01:35.151
+They dropped the J2EE thing
+
+34
+00:01:35.151 --> 00:01:39.424
+and they added some ease of use for EJB 3, JPA,
+
+35
+00:01:39.424 --> 00:01:43.020
+JSF, JAXB, and JAX-WS or web services.
+
+36
+00:01:43.020 --> 00:01:45.588
+And then with EE 6 again, they pruned,
+
+37
+00:01:45.588 --> 00:01:48.433
+I mean they got rid of some stuff that didn't work,
+
+38
+00:01:48.433 --> 00:01:51.084
+mainly some of the EJB problems,
+
+39
+00:01:51.084 --> 00:01:54.259
+and also they made it easier to use so on and so forth.
+
+40
+00:01:54.259 --> 00:01:58.575
+They added support for CDI, Context Dependency Injection,
+
+41
+00:01:58.575 --> 00:02:00.564
+which is very similar to Spring
+
+42
+00:02:00.564 --> 00:02:03.370
+in version of control and dependency of injection.
+
+43
+00:02:03.370 --> 00:02:04.963
+And then finally in Java EE 7,
+
+44
+00:02:04.963 --> 00:02:07.550
+they added support for JMS version two,
+
+45
+00:02:07.550 --> 00:02:11.037
+Batch, Concurrency, Web Sockets, and so on.
+
+46
+00:02:11.037 --> 00:02:14.473
+So that's how J2EE grew up overtime.
+
+47
+00:02:14.473 --> 00:02:18.605
+So servlets and JSPs were the initial popular items
+
+48
+00:02:18.605 --> 00:02:22.772
+and then they started adding other things along the way.
+
+49
+00:02:23.769 --> 00:02:25.687
+Now, the one thing that they added along the way
+
+50
+00:02:25.687 --> 00:02:30.202
+was Enterprise JavaBeans and so EJB is like your cousin
+
+51
+00:02:30.202 --> 00:02:32.686
+or your family member that you just don't really like
+
+52
+00:02:32.686 --> 00:02:35.268
+because they just mess things up for everybody.
+
+53
+00:02:35.268 --> 00:02:38.901
+So the early versions of Enterprise JavaBeans
+
+54
+00:02:38.901 --> 00:02:42.986
+versions one and two were extremely complex to develop.
+
+55
+00:02:42.986 --> 00:02:46.750
+You had to create these XML deployment descriptors.
+
+56
+00:02:46.750 --> 00:02:49.663
+You had to define multiple interfaces
+
+57
+00:02:49.663 --> 00:02:51.818
+so like we have in this diagram here,
+
+58
+00:02:51.818 --> 00:02:53.787
+to create a bean class,
+
+59
+00:02:53.787 --> 00:02:55.771
+you had to have a home interface
+
+60
+00:02:55.771 --> 00:02:57.569
+and then a component interface
+
+61
+00:02:57.569 --> 00:03:00.748
+and you basically had three or four .java files
+
+62
+00:03:00.748 --> 00:03:03.898
+just for an actual bean implementation
+
+63
+00:03:03.898 --> 00:03:05.248
+so just a lot of work.
+
+64
+00:03:05.248 --> 00:03:07.442
+It was really clunky for a developer
+
+65
+00:03:07.442 --> 00:03:09.538
+to write all of this code.
+
+66
+00:03:09.538 --> 00:03:11.939
+It was very tedious and very error prone.
+
+67
+00:03:11.939 --> 00:03:15.259
+But once you finally got the bean developed and deployed it
+
+68
+00:03:15.259 --> 00:03:17.341
+and you deployed it in production,
+
+69
+00:03:17.341 --> 00:03:20.170
+then you were slapped with another problem,
+
+70
+00:03:20.170 --> 00:03:23.291
+poor performance, so these entity beans,
+
+71
+00:03:23.291 --> 00:03:27.002
+basically mappings between Java classes and database tables,
+
+72
+00:03:27.002 --> 00:03:29.994
+just awful slow, just terribly slow.
+
+73
+00:03:29.994 --> 00:03:33.362
+We actually had to do on one deployment,
+
+74
+00:03:33.362 --> 00:03:36.902
+we actually had to pull our code back out of production
+
+75
+00:03:36.902 --> 00:03:39.216
+and actually remove the EJB functionality
+
+76
+00:03:39.216 --> 00:03:41.837
+because it slowed everything down.
+
+77
+00:03:41.837 --> 00:03:44.867
+And so what happened overtime was that a lot of developers
+
+78
+00:03:44.867 --> 00:03:48.111
+started to continue to do J2EE,
+
+79
+00:03:48.111 --> 00:03:52.278
+but they actually would do it without Enterprise JavaBeans
+
+80
+00:03:53.254 --> 00:03:56.253
+and so this caught on with other development teams too
+
+81
+00:03:56.253 --> 00:03:58.611
+and pretty much a lot of folks were doing it.
+
+82
+00:03:58.611 --> 00:04:00.539
+So this one fellow Rod Johnson,
+
+83
+00:04:00.539 --> 00:04:01.931
+he actually wrote this great book
+
+84
+00:04:01.931 --> 00:04:04.931
+called J2EE Development without EJB.
+
+85
+00:04:05.944 --> 00:04:07.884
+So EJB was very popular at one point
+
+86
+00:04:07.884 --> 00:04:09.848
+and then it fell out of favor
+
+87
+00:04:09.848 --> 00:04:11.010
+and so he pushed that out
+
+88
+00:04:11.010 --> 00:04:13.448
+and they also started working on the Spring Framework
+
+89
+00:04:13.448 --> 00:04:15.390
+and so they released another book
+
+90
+00:04:15.390 --> 00:04:18.746
+Java Development with the Spring Framework.
+
+91
+00:04:18.746 --> 00:04:22.331
+So EJB was that bad cousin or that bad uncle
+
+92
+00:04:22.331 --> 00:04:23.691
+that you just didn't want in the family
+
+93
+00:04:23.691 --> 00:04:27.024
+because they messed it up for everybody.
+
